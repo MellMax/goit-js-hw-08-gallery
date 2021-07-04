@@ -120,3 +120,27 @@ function onCloseModal() {
     refs.image.removeAttribute('alt');
 }
 }
+
+ function onArrowRight() {
+  if (currentIndex + 1 > galleryItems.length - 1) {
+    currentIndex = 0;
+  } else {
+    currentIndex += 1;
+  }
+  lightBoxImgContent(
+    galleryItems[currentIndex].original,
+    galleryItems[currentIndex].description,
+  );
+}
+
+function onArrowLeft() {
+  if (currentIndex - 1 < 0) {
+    currentIndex = galleryItems.length - 1;
+  } else {
+    currentIndex -= 1;
+  }
+  lightBoxImgContent(
+    galleryItems[currentIndex].original,
+    galleryItems[currentIndex].description,
+  );
+}
